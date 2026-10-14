@@ -1,0 +1,59 @@
+:root { --ink:#203249; --muted:#718196; --bg:#f3f6fa; --blue:#315df5; --line:#e3e9f1; --green:#167f63; }
+* { box-sizing: border-box; }
+body { margin:0; color:var(--ink); background:var(--bg); font-family:"Yu Gothic", "Meiryo", "Hiragino Kaku Gothic ProN", sans-serif; line-height:1.6; }
+.site-header { background:#fff; border-bottom:1px solid var(--line); }
+.header-inner { max-width:1160px; padding:19px 24px; margin:auto; display:flex; justify-content:space-between; align-items:center; gap:20px; }
+.brand { display:flex; align-items:center; gap:11px; font-size:15px; font-weight:900; text-decoration:none; letter-spacing:.08em; color:#172e4b; }
+.brand-mark { display:inline-grid; place-items:center; background:var(--blue); border-radius:9px; color:white; font-size:18px; width:34px; height:34px; }
+.header-note { color:#8593a3; font-size:12px; font-weight:700; }
+.container { max-width:1160px; margin:32px auto 55px; padding:0 24px; }
+.intro { display:flex; align-items:center; justify-content:space-between; overflow:hidden; min-height:220px; padding:29px 40px; color:#fff; background:linear-gradient(117deg,#0c2543,#1e3a70 65%,#315ff2); border-radius:20px; margin-bottom:20px; }
+.eyebrow { margin:0 0 6px; font-size:11px; font-weight:900; letter-spacing:.24em; color:#8abaff; }
+h1 { font-size:32px; line-height:1.4; letter-spacing:.01em; margin:5px 0 9px; } .intro p:last-child { font-size:13px; color:#d8e8ff; margin:0; }
+.intro-art { min-width:310px; height:158px; position:relative; }
+.art-dot { position:absolute; width:174px;height:174px;border:26px solid rgba(166,195,255,.13); border-radius:50%; left:90px;top:-5px; }
+.art-card { position:absolute; background:#fff; color:#233954; box-shadow:0 18px 40px #051c4380; border-radius:10px; padding:12px 17px; font-weight:800; font-size:13px; }
+.art-one { top:1px; left:110px; transform:rotate(5deg); color:#168b72; }
+.art-two { top:64px; left:10px; transform:rotate(-8deg); }
+.art-three { top:107px; left:151px; transform:rotate(5deg);color:var(--blue); }
+.panel { background:#fff; border:1px solid var(--line); border-radius:17px; padding:25px 29px; box-shadow:0 6px 28px rgba(18,52,86,.035); margin-bottom:20px; }
+.panel-heading { display:flex; justify-content:space-between; align-items:center; gap:15px; margin-bottom:18px; }
+.section-kicker { font-size:10px; color:var(--blue); margin:0; letter-spacing:.13em; font-weight:900; }
+h2 { font-size:19px; margin:0; letter-spacing:.02em; }
+.subtle { color:#9ba7b7; font-size:12px; }
+.member-grid { display:grid; grid-template-columns: 1.04fr 1fr; gap:22px; }
+.field-group label { display:block; margin:0 0 8px; font-weight:700; font-size:12px; }
+select, input { min-height:43px; width:100%; border:1px solid #d8e1ea; border-radius:8px; background:#fff; padding:9px 13px; color:var(--ink); font-size:14px; font-family:inherit; }
+select:focus-visible, input:focus-visible, button:focus-visible { outline:3px solid #bdcfff; outline-offset:2px; }
+:disabled { cursor:not-allowed; opacity:.65; }
+.profile-box { padding:14px 18px; border-radius:10px; background:#f3f7fc; }
+.profile-box p { margin:3px 0; font-size:12px; color:#6f7e90; overflow-wrap:anywhere; }
+.profile-box .profile-name { color:#1d3552; font-size:16px; font-weight:900; }
+.notice { margin:17px 0 0; color:#486a93; background:#eff6ff; padding:10px 13px; border-radius:8px; font-size:12px; }
+.notice[data-mode="error"] { color:#a1333b;background:#fff0f0; }
+.notice[data-mode="success"] { color:#17684d;background:#ebf8f2; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
+.stat { background:#f6f8fc; border:1px solid #edf0f6; border-radius:12px; display:flex; flex-direction:column; padding:16px 20px; }
+.stat span { color:#667a8f; font-size:12px;font-weight:800; }
+.stat strong { font-family:Arial,sans-serif; font-size:36px; line-height:1.25; margin:5px 0 0; }
+.stat small { color:#a3b1c0; font-size:10px;font-weight:800;letter-spacing:.1em; }
+.stat-done strong { color:#138469; } .stat-open strong { color:#df8951; }
+.progress-heading { display:flex;justify-content:space-between; margin:22px 2px 9px; font-size:12px; font-weight:800; }
+.progress-track { height:10px; background:#e8edf4; border-radius:20px; overflow:hidden; }
+.progress-fill { width:0; height:100%;background:linear-gradient(90deg,#1c9579,#53c5a4);transition:width .3s ease; }
+.toolbar { background:#f6f8fc;border:1px solid #e9edf4; padding:17px; border-radius:12px; display:grid; grid-template-columns:230px 1fr; gap:17px; margin-bottom:15px; }
+.search-actions { display:flex; gap:7px; } .search-actions input { min-width:0; }
+.button { border:0; padding:10px 16px; border-radius:8px; font-size:12px; min-height:42px; font-family:inherit; font-weight:800; white-space:nowrap; cursor:pointer; }
+.primary { color:white; background:var(--blue); } .primary:not(:disabled):hover { background:#2549c3; }
+.secondary { color:#38516e; background:white; border:1px solid #d7e0ed; } .secondary:not(:disabled):hover { background:#ebf2ff; }
+.results-bar { display:flex;justify-content:space-between;align-items:center; padding:7px 0 12px; border-bottom:1px solid var(--line); font-size:12px; color:#72839b; }
+.results-bar strong { color:#2a57df;font-size:14px; }
+.task-list { list-style:none; padding:0; margin:0; }
+.task-item { display:flex; align-items:center; gap:14px; border-bottom:1px solid var(--line); padding:14px 4px; }
+.task-id { min-width:48px; font-size:11px; color:#99a8b8; font-weight:800; }
+.task-title { flex:1; min-width:0; margin:0; font-size:14px; font-weight:700; overflow-wrap:anywhere; }
+.state-label { font-size:11px; font-weight:900; border-radius:20px; padding:6px 11px; white-space:nowrap; }
+.state-label.is-done { color:#148067; background:#e7f7f0; } .state-label.is-open { color:#ac6433; background:#fff1e4; }
+.empty-state { padding:40px 12px; text-align:center; color:#9da9b7; font-size:14px; }
+.api-note { color:#8593a2; font-size:11px; } .site-footer { background:#eaf0f6; padding:21px max(24px,calc((100vw - 1112px)/2)); display:flex;justify-content:space-between;gap:18px;color:#8494a8;font-weight:700;font-size:11px; }
+@media(max-width:750px) { .intro {padding:27px;} .intro-art {display:none;} h1 {font-size:26px;} .member-grid,.toolbar{grid-template-columns:1fr;} .panel {padding:22px 18px;} .stats{gap:6px;} .stat{padding:12px;} .stat strong {font-size:29px;} .search-actions {flex-wrap:wrap;} .search-actions input { flex-basis:100%;} .site-footer{flex-direction:column;} }

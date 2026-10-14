@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TEAM TASK BOARD | タスク管理ダッシュボード</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">T</span><span>TEAM TASK BOARD</span></a>
+      <span class="header-note">Web API × JavaScript</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">PROJECT DASHBOARD</p>
+        <h1 id="page-title">チームの進捗を、<br>ひと目で把握。</h1>
+        <p>担当者ごとのタスクを取得し、完了状況・絞り込み・検索を行うダッシュボードです。</p>
+      </div>
+      <div class="intro-art" aria-hidden="true">
+        <span class="art-dot"></span><span class="art-card art-one">✓　Done</span>
+        <span class="art-card art-two">☷　Tasks</span><span class="art-card art-three">↗　Progress</span>
+      </div>
+    </section>
+
+    <section class="panel member-panel" aria-labelledby="member-heading">
+      <div class="panel-heading">
+        <div><p class="section-kicker">STEP 01</p><h2 id="member-heading">担当者を選択</h2></div>
+        <span class="subtle">メンバー情報は Web API から取得</span>
+      </div>
+      <div class="member-grid">
+        <div class="field-group">
+          <label for="user-select">担当者</label>
+          <select id="user-select" disabled><option value="">読み込み中…</option></select>
+        </div>
+        <div class="profile-box">
+          <p class="profile-name" id="user-name">未選択</p>
+          <p id="user-id">担当者ID：—</p>
+          <p>表示専用のタスク管理ダッシュボード</p>
+        </div>
+      </div>
+      <p class="notice" id="data-status" role="status" aria-live="polite">担当者の一覧を取得中です…</p>
+    </section>
+
+    <section class="panel summary-panel" aria-labelledby="summary-heading">
+      <div class="panel-heading"><div><p class="section-kicker">STEP 02</p><h2 id="summary-heading">進捗サマリー</h2></div></div>
+      <div class="stats">
+        <div class="stat stat-all"><span>総タスク数</span><strong id="summary-total">—</strong><small>ALL TASKS</small></div>
+        <div class="stat stat-done"><span>完了</span><strong id="summary-complete">—</strong><small>COMPLETED</small></div>
+        <div class="stat stat-open"><span>未完了</span><strong id="summary-incomplete">—</strong><small>IN PROGRESS</small></div>
+      </div>
+      <div class="progress-heading"><span>完了率</span><strong id="progress-label">—</strong></div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    </section>
+
+    <section class="panel tasks-panel" aria-labelledby="tasks-heading">
+      <div class="panel-heading">
+        <div><p class="section-kicker">STEP 03</p><h2 id="tasks-heading">タスク一覧</h2></div>
+        <button id="reload-button" class="button secondary" type="button" disabled>データを再取得</button>
+      </div>
+      <div class="toolbar">
+        <div class="field-group">
+          <label for="status-filter">表示するタスク</label>
+          <select id="status-filter" disabled>
+            <option value="all">すべて</option>
+            <option value="open">未完了のみ</option>
+            <option value="done">完了のみ</option>
+          </select>
+        </div>
+        <div class="field-group search-group">
+          <label for="keyword-search">タイトルのキーワード</label>
+          <div class="search-actions">
+            <input type="text" id="keyword-search" placeholder="日本語・英語で検索" disabled>
+            <button id="search-button" class="button primary" type="button" disabled>検索</button>
+            <button id="clear-button" class="button secondary" type="button" disabled>クリア</button>
+          </div>
+        </div>
+      </div>
+      <div class="results-bar"><span>検索・絞り込み結果</span><strong id="visible-count">—</strong></div>
+      <ul id="task-list" class="task-list"><li class="empty-state">担当者を選択するとタスクが表示されます。</li></ul>
+    </section>
+    <p class="api-note">※このサイトは学習用です。表示される名前とタスクは架空のサンプルデータです。タスクの変更・保存は行いません。</p>
+  </main>
+  <footer class="site-footer"><span>TEAM TASK BOARD / JavaScript 演習 3</span><span>Data: Google Sheets / Google Apps Script</span></footer>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
